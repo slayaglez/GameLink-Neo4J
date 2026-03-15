@@ -1,11 +1,11 @@
 # 🎮 GameLink — Red Social de Videojuegos
 
-> **Base de datos orientada a grafos con Neo4j · Proyecto académico · DAM/DAW**
+> **Base de datos orientada a grafos con Neo4j · Proyecto académico · DAM**
 
 ![Neo4j](https://img.shields.io/badge/Neo4j-5.18-008CC1?style=flat-square&logo=neo4j&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=flat-square&logo=python&logoColor=white)
-![License](https://img.shields.io/badge/licencia-académica-green?style=flat-square)
+![License](https://img.shields.io/badge/Licencia-Académica-11CC11?style=flat-square)
 
 ---
 
@@ -17,17 +17,17 @@ El grafo modela una comunidad de jugadores que pueden hacerse amigos, bloquearse
 
 ---
 
-## 🏗️ Arquitectura del sistema
+## 🏗️ Arquitectura objetivo del sistema
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                    CAPA DE PRESENTACIÓN                 │
+│                    CAPA DE INTERFAZ                     │
 │                                                         │
 │   Neo4j Browser (localhost:7474)  ←→  FastAPI /docs     │
 └──────────────────────┬──────────────────────────────────┘
                        │
 ┌──────────────────────▼──────────────────────────────────┐
-│                    CAPA DE APLICACIÓN                   │
+│                    CAPA DE SERVICIO                     │
 │                                                         │
 │   api/main.py (FastAPI)    script.py (demo Bolt)        │
 │   api/db.py (conexión)     api/models.py (Pydantic)     │
@@ -305,11 +305,13 @@ FastAPI genera documentación interactiva automáticamente en `/docs`, valida lo
 
 ---
 
-## 📝 Nota sobre el código Python
+## 📝 Nota a tener en cuenta
 
 Los scripts de Python incluidos en este repositorio (`script.py` y el módulo `api/`) fueron desarrollados con asistencia de la IA Claude como herramienta de apoyo durante el proceso de aprendizaje.
 
 La decisión de delegar la escritura de los scripts fue intencionada: el objetivo principal de este trabajo es trabajar **Neo4j, Cypher y el modelado de grafos**, no el desarrollo backend en Python. Utilizar IA como asistente me permitirá centrarme en comprender la arquitectura completa del sistema — cómo una base de datos de grafos se conecta con una API REST y cómo se despliega en contenedores — sin invertir tiempo en depurar sintaxis de Python.
+
+Con el mismo objetivo de poder centrarme únicamente en instanciar la base de datos con Docker y aprender a manejarme con mi primer compose parte del trabajo de investigación ha sido delegado también a la IA usandola de filtro para ubicar las herramientas adecuadas para llevar el proyecto a su versión fullstack, esto me ha ahorrado mucho tiempo de búsqueda que he podido invertir en investigar las propias herramientas y entender por qué son las adecuadas.
 
 Esto refleja una forma de trabajar cada vez más habitual en el sector: usar herramientas de IA para acelerar las partes fuera del foco principal, manteniendo el criterio técnico sobre las decisiones de arquitectura y diseño.
 
