@@ -1,0 +1,19 @@
+# Credenciales — NUNCA al repositorio
+.env
+
+# Volúmenes de Neo4j
+data/
+logs/
+plugins/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
